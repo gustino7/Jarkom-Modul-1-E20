@@ -14,6 +14,13 @@ Nama Anggota :
 Untuk filter packet yang melakukan upload FTP maka perlu mencari protocol FTP yang mengandung string STOR didalam packetnya. Lalu diklik packet yang bersangkutan untuk melihat sequence number (raw) dan acknowledge number (raw). Untuk mengetahui responsenya maka melihat packet selanjutnya yang dikirim dari IP yang sama setelah melakukan STOR. Terlihat untuk upload file (STOR) terdapat di packet no 147 dan packet selanjutnya yaitu pada packet no 149. Didalam packet no 149 terdapat sequence number (raw) dan acknowledge number (raw) didalamnya.
 
 ## Soal 2
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/c868791b-2792-40d6-8636-a61b74362cbd)
+
+Filter hasil capture dengan `ip.addr == 10.21.78.111 && tcp.port == 8000`(Adress website praktikum). Selanjutnya pilih salah satu packet dan follow tcp/http stream. Setetlah itu akan muncul window berikut.
+
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/33ebb1a6-35e0-4054-a847-699e73053b70)
+
+Pada window tersebut dapat deketahui bahwa webserver yang digunakan adalah gunicorn.
 
 ## Soal 3
 ![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/93267604/f0249de0-d078-4073-93aa-890b6c449cc7)
@@ -22,6 +29,10 @@ a. Untuk melihat packet yang tercapture pada ip source dan destination address 2
 b. Untuk protocol yang digunakan pada packet dapat dilihat dari kolom Protocol pada wireshark
 
 ## Soal 4
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/be3fcb88-ebba-44d6-962f-f4ba98cb858b)
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/293e4bd3-283b-4190-8eef-4e5f9d7173f2)
+
+Untuk mendapatkan nilai cheksum pada paket nomor 130, filter hasil capture dengan `frame.number == 130`. Klik hasil paket yang difilter, kemudian pada bagian User Datagram Protocol, dapat diketahui cheksum dari paket nomor 130 adalah 0x18e5.
 
 ## Soal 5
 ![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/93267604/608d09bb-c539-4b8b-b255-376f96778200)
@@ -47,8 +58,10 @@ Untuk mencari source address 7812 yaitu membuka packet dengan nomor urut 7812. D
 Untuk mencari jumlah packet yang memiliki ip destination sesuai soal maka menggunakan filter ip.dst == "Alamat IP". Dalam kasus ini maka filternya yaitu ip.dst == 184.87.193.88. Kemudian hitung jumlah packet yang ditampilkan tersebut.
 
 ## Soal 8
+Untuk memfilter capture semua protokol paket yang menuju port 80 menggunakan `tcp.dstport == 80 || udp.dstport == 80`. Karena, pada soal terdapat kata kunci 'menuju' dan 'semua protokol' sehinggan menggunakan kueri `dstport` dan `tcp || udp`.
 
 ## Soal 9
 Untuk mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34. yaitu menggunakan query ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 dimana ip source yang menunjukkan ip 10.51.40.1 dan ip destination tidak menunjukkan 10.39.55.34
 
 ## Soal 10
+
