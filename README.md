@@ -64,4 +64,13 @@ Untuk memfilter capture semua protokol paket yang menuju port 80 menggunakan `tc
 Untuk mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34. yaitu menggunakan query ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 dimana ip source yang menunjukkan ip 10.51.40.1 dan ip destination tidak menunjukkan 10.39.55.34
 
 ## Soal 10
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/bf1ac602-9500-4613-ac00-ccc46b50db4b)
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/e5ae9fde-8903-430a-addd-c801abd46315)
 
+Untuk mendapatkan kredensial login Telnet, filter hasil capture dengan kueri `telnet`. Pilih paket dari hasil filter, lalu klik follow dan TCP stream.
+
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/06be4039-b70e-494f-8805-b79278937b7d)
+![image](https://github.com/gustino7/Jarkom-Modul-1-E20/assets/95972129/49084050-583b-49b0-9260-f19202707f56)
+
+
+Karena terdapat beberapa password, maka saya mencoba satu-satu mulai dari `tcp.stream eq 1`. Kredensial yang benar yaitu `dhafin:kesayangannyak0k0`
